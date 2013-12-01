@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: competitive_analysis_tool_development
   pool: 5
-  username: competitive_analysis_tool
+  username: peterfarrow
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: competitive_analysis_tool_test
   pool: 5
-  username: competitive_analysis_tool
+  username: peterfarrow
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: competitive_analysis_tool_production
   pool: 5
-  username: competitive_analysis_tool
+  username: 
   password:
