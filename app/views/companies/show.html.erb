@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Pricing information:</strong>
+  <%= @company.pricing_information %>
+</p>
+
+<p>
+  <strong>Subject matter comparison:</strong>
+  <%= @company.subject_matter_comparison %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @company.length %>
+</p>
+
+<p>
+  <strong>Configuration:</strong>
+  <%= @company.configuration %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @company.certification %>
+</p>
+
+<p>
+  <strong>Noted customers:</strong>
+  <%= @company.noted_customers %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

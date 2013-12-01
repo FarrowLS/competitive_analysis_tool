@@ -1,0 +1,39 @@
+<h1>Listing companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pricing information</th>
+      <th>Subject matter comparison</th>
+      <th>Length</th>
+      <th>Configuration</th>
+      <th>Certification</th>
+      <th>Noted customers</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.pricing_information %></td>
+        <td><%= company.subject_matter_comparison %></td>
+        <td><%= company.length %></td>
+        <td><%= company.configuration %></td>
+        <td><%= company.certification %></td>
+        <td><%= company.noted_customers %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company', new_company_path %>
