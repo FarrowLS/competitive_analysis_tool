@@ -50,4 +50,4 @@ group :development, :test do
 end
 
 # Using Bootstrap via sass gem
-gem 'bootstrap-sass', '~> 2.3.2.1'
+gem 'bootstrap-sass', '~> 3.0.2.0'

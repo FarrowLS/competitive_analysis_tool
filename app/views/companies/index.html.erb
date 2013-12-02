@@ -1,3 +1,179 @@
+    <!-- start Selector bar  -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+                
+<!-- start acc -->
+                <div class="panel-group" id="accordionTop">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#topCollapse">
+                          Company selection
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="topCollapse" class="panel-collapse collapse  ">
+                      <div class="panel-body">
+                        <p>Welcome to the Competitive Analysis Tool (CAT). Please select the companies you would like to view below.</p>
+                        <p>  
+                        <% @companies.each do |company| %>
+
+                          <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox-<%= company.name %>" value="<%= company.name %>"  ><%= company.name %>
+                          </label>
+
+                        <% end %>
+
+                        </p>
+                        <p>
+                          <%= link_to 'Add a company', new_company_path %> 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+<!-- end acc -->              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end Selector bar  -->
+
+    <!-- start Company display table  -->
+
+    <div class="container">
+      <div class="row">
+        
+        <% @companies.each do |company| %>
+
+        <div id="panel-<%= company.name %>" class="company-info col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4> <%= company.name %> </h4>
+                </div>
+                <div class="col-md-3 print-close" >
+
+                  <%= link_to edit_company_path(company) do %><span class="glyphicon glyphicon-pencil"></span><% end %>
+
+		  <%= link_to company_path(company) do %><span class="glyphicon glyphicon-print"></span><% end %> 
+
+                  <%= link_to company_path(company), method: :delete, data: {confirm: 'Are you sure?'} do %><span class="glyphicon glyphicon-trash"></span><% end %>
+
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+
+                </div>
+              </div> <!-- end row  --> 
+              <div class="panel-group" id="accordion">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse1">
+                        Pricing information
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse1" class="panel-collapse collapse  ">
+                    <div class="panel-body">                  
+                      <%= company.pricing_information %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse2">
+                        Subject Matter Comparison
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse2" class="panel-collapse collapse  ">
+                    <div class="panel-body">                      
+                      <%= company.subject_matter_comparison %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse3">
+                        Length
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse3" class="panel-collapse collapse  ">
+                    <div class="panel-body">    
+                      <%= company.length %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse4">
+                        Configuration
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse4" class="panel-collapse collapse  ">
+                    <div class="panel-body">    
+                      <%= company.configuration %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse5">
+                        Certification
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse5" class="panel-collapse collapse  ">
+                    <div class="panel-body">    
+                      <%= company.certification %>
+                    </div> 
+                  </div>
+                </div>	
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse6">
+                        Noted Customers
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= company.name %>-collapse6" class="panel-collapse collapse  ">
+                    <div class="panel-body">    
+                      <%= company.noted_customers %>
+                    </div> 
+                  </div>
+                </div>
+
+              </div>
+            </div> <!-- end panel-body  -->
+          </div> <!-- end panel-default  --> 
+        </div> <!-- end panel-<%= company.name %>  -->
+
+        <% end %>
+
+      </div> <!-- end row -->
+    </div> <!-- end container  -->
+    <!-- end Company display table  -->
+
+<!--
 <h1>Listing companies</h1>
 
 <table>
@@ -37,3 +213,47 @@
 <br>
 
 <%= link_to 'New Company', new_company_path %>
+
+-->
+
+<script>
+  $(function(){
+  
+    <% @companies.each do |company| %>
+      $('#panel-<%= company.name %>').hide();
+    <% end %>
+
+    $('.collapse').collapse({
+      parent: true
+    });  
+
+    <% @companies.each do |company| %>
+        $('#inlineCheckbox-<%= company.name %>').click(function () {
+          $('#panel-<%= company.name %>').toggle();
+          columnCheck(); 
+        });
+    <% end %>
+
+      function columnCheck() {
+        if ($('div.company-info:visible').length >= 2) {
+          // alert('2 or more');
+          $('div.company-info').addClass('col-md-6').removeClass('col-md-12');
+        } else {
+          // alert('1 or less');
+          $('div.company-info').removeClass('col-md-6').addClass('col-md-12');
+        }
+      }
+ 
+      columnCheck();
+
+    <% @companies.each do |company| %>
+      $('#panel-<%= company.name %> span.glyphicon-remove-circle').click(function () {
+        $('#inlineCheckbox-<%= company.name %>').trigger('click');
+      });      
+    <% end %>
+
+  // alert('loaded');
+
+  
+  });
+</script>
