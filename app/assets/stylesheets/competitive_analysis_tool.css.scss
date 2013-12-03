@@ -1,14 +1,81 @@
 
 @import "bootstrap";
 
+/* Structural layout  */
+
 body {
   padding-top: 70px;
 }
 
-div.glyphicon {
+
+/* Company panel controls  */
+
+div.glyphicon, .show-hide-control {
   cursor: pointer;	
 }
 
 div.print-close {
   text-align: right;
 }
+
+/* Framework color fixes  */
+
+a, a:hover, a:active {
+  color:#666666;
+}
+
+.glyphicon {
+  color:#666666;
+}
+
+.show-hide-control:hover {
+  text-decoration:underline;
+}
+
+/* Colors  */
+
+.navbar-inverse {
+  background-color: #004F5A;
+  background: url(bg-header.gif) repeat-x 50% 0 #063745;
+}
+
+.navbar-inverse a.navbar-brand, .navbar-inverse .navbar-nav > .active > a {
+  color: #EEEEEE;
+}
+
+.navbar-inverse a.navbar-brand:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color:#56bcb7;
+  text-decoration:none; 
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: #063745;
+}
+
+h4.company-title {
+  color: #008080;
+}
+
+h4, h4 a, h4 a:active, h4 a:hover, a.company-selection, a.company-selection:active, a.company-selection:hover, a.company-selection:visited {
+  color: #F26649;
+  background: transparent; 
+}
+
+.print-close a, .print-close a:hover, .print-close a:active {
+  background: #FFFFFF;
+}
+
+.new-company a, .new-company a:hover, .new-company a:active {
+  color: #666666;
+  background: #FFFFFF;
+}
+
+.glyphicon-fire, .glyphicon-minus, .glyphicon-plus {
+  color: #FF6649;
+}
+
+
+
+
+
+

@@ -10,8 +10,8 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#topCollapse">
-                          Company selection
+                        <a data-toggle="collapse" data-parent="#accordion" href="#topCollapse" class="company-selection">
+                         <span class="glyphicon glyphicon-minus"></span> Company selection
                         </a>
                       </h4>
                     </div>
@@ -29,7 +29,7 @@
 
                         </p>
                         <p>
-                          <%= link_to 'Add a company', new_company_path %> 
+                          <span class="new-company"><%= link_to 'Add a company', new_company_path %></span> 
                         </p>
                       </div>
                     </div>
@@ -56,7 +56,9 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-9">
-                  <h4> <%= company.name %> </h4>
+                  <h4 class="company-title"> <%= company.name %> </h4>
+                  <span id="<%= company.name %>-show" class="show-hide-control">Show all</span> / 
+                  <span id="<%= company.name %>-hide" class="show-hide-control">Hide all</span>
                 </div>
                 <div class="col-md-3 print-close" >
 
@@ -80,7 +82,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse1" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse1" class="panel-collapse collapse  <%= company.name %>-collapse  ">
                     <div class="panel-body">                  
                       <%= company.pricing_information %>
                     </div> 
@@ -95,7 +97,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse2" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse2" class="panel-collapse collapse <%= company.name %>-collapse ">
                     <div class="panel-body">                      
                       <%= company.subject_matter_comparison %>
                     </div> 
@@ -110,7 +112,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse3" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse3" class="panel-collapse collapse  <%= company.name %>-collapse ">
                     <div class="panel-body">    
                       <%= company.length %>
                     </div> 
@@ -125,7 +127,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse4" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse4" class="panel-collapse collapse  <%= company.name %>-collapse ">
                     <div class="panel-body">    
                       <%= company.configuration %>
                     </div> 
@@ -140,7 +142,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse5" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse5" class="panel-collapse collapse  <%= company.name %>-collapse ">
                     <div class="panel-body">    
                       <%= company.certification %>
                     </div> 
@@ -155,7 +157,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse6" class="panel-collapse collapse  ">
+                  <div id="<%= company.name %>-collapse6" class="panel-collapse collapse  <%= company.name %>-collapse ">
                     <div class="panel-body">    
                       <%= company.noted_customers %>
                     </div> 
@@ -251,6 +253,21 @@
         $('#inlineCheckbox-<%= company.name %>').trigger('click');
       });      
     <% end %>
+
+
+    <% @companies.each do |company| %>
+      $('#<%= company.name %>-show').click(function () {
+        $(".<%= company.name %>-collapse").collapse('show');
+      });      
+    <% end %>
+
+
+    <% @companies.each do |company| %>
+      $('#<%= company.name %>-hide').click(function () {
+        $(".<%= company.name %>-collapse").collapse('hide');
+      });      
+    <% end %>
+
 
   // alert('loaded');
 
