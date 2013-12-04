@@ -10,7 +10,7 @@
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#topCollapse" class="company-selection">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#topCollapse" class="company-selection app-accordion">
                          <span class="glyphicon glyphicon-minus"></span> Company selection
                         </a>
                       </h4>
@@ -77,7 +77,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse1">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse1" class="app-    accordion">
                         Pricing information
                       </a>
                     </h4>
@@ -92,7 +92,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse2">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse2" class="app-    accordion">
                         Subject Matter Comparison
                       </a>
                     </h4>
@@ -107,7 +107,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse3">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse3" class="app-    accordion">
                         Length
                       </a>
                     </h4>
@@ -122,7 +122,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse4">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse4" class="app-    accordion">
                         Configuration
                       </a>
                     </h4>
@@ -137,7 +137,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse5">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse5" class="app-        accordion">
                         Certification
                       </a>
                     </h4>
@@ -152,7 +152,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse6">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse6" class="app-        accordion">
                         Noted Customers
                       </a>
                     </h4>
@@ -268,6 +268,11 @@
       });      
     <% end %>
 
+/*
+    $('.app-accordion').click(function (){
+      $(this + ' .glyphicon').hide(2000);      
+    });
+*/
 
   // alert('loaded');
 
