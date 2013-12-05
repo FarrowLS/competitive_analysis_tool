@@ -4,8 +4,6 @@
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-body">
-                
-<!-- start acc -->
                 <div class="panel-group" id="accordionTop">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -22,7 +20,7 @@
                         <% @companies.each do |company| %>
 
                           <label class="checkbox-inline">
-                            <input type="checkbox" id="inlineCheckbox-<%= company.name %>" value="<%= company.name %>"  ><%= company.name %>
+                            <input type="checkbox" id="inlineCheckbox-<%= (company.name).gsub(' ', '-') %>" value="<%= (company.name).gsub(' ', '-') %>"  ><%= company.name %>
                           </label>
 
                         <% end %>
@@ -35,8 +33,6 @@
                     </div>
                   </div>
               </div>
-<!-- end acc -->              
-
             </div>
           </div>
         </div>
@@ -51,24 +47,26 @@
         
         <% @companies.each do |company| %>
 
-        <div id="panel-<%= company.name %>" class="company-info col-md-12">
+        <div id="panel-<%= (company.name).gsub(' ', '-') %>" class="company-info col-md-12">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-9">
-                  <h4 class="company-title"> <%= company.name %> </h4>
-                  <span id="<%= company.name %>-show" class="show-hide-control">Show all</span> / 
-                  <span id="<%= company.name %>-hide" class="show-hide-control">Hide all</span>
+                  <h4 class="company-title"> <%= company.name %>  </h4>
+                  <div class="show-hide-control-group">  
+                    <span id="<%= (company.name).gsub(' ', '-') %>-show" class="show-hide-control"><span class="glyphicon glyphicon-plus" title="Show all"></span></span>  
+                    <span id="<%= (company.name).gsub(' ', '-') %>-hide" class="show-hide-control"><span class="glyphicon glyphicon-minus" title="Hide all"></span></span>
+                  </div>
                 </div>
                 <div class="col-md-3 print-close" >
 
-                  <%= link_to edit_company_path(company) do %><span class="glyphicon glyphicon-pencil"></span><% end %>
+                  <%= link_to edit_company_path(company) do %><span class="glyphicon glyphicon-pencil" title="edit"></span><% end %>
 
-		  <%= link_to company_path(company) do %><span class="glyphicon glyphicon-print"></span><% end %> 
+		              <%= link_to company_path(company) do %><span class="glyphicon glyphicon-print" title="print"></span><% end %> 
 
-                  <%= link_to company_path(company), method: :delete, data: {confirm: 'Are you sure?'} do %><span class="glyphicon glyphicon-trash"></span><% end %>
+                  <%= link_to company_path(company), method: :delete, data: {confirm: 'Are you sure?'} do %><span class="glyphicon glyphicon-trash" title="delete company"></span><% end %>
 
-                  <span class="glyphicon glyphicon-remove-circle"></span>
+                  <span class="glyphicon glyphicon-remove-circle" title="close panel"></span>
 
                 </div>
               </div> <!-- end row  --> 
@@ -77,12 +75,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse1" class="app-    accordion">
-                        Pricing information
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse1" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Pricing information
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse1" class="panel-collapse collapse  <%= company.name %>-collapse  ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse1" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
                     <div class="panel-body">                  
                       <%= company.pricing_information %>
                     </div> 
@@ -92,12 +90,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse2" class="app-    accordion">
-                        Subject Matter Comparison
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse2" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Subject Matter Comparison
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse2" class="panel-collapse collapse <%= company.name %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse2" class="panel-collapse collapse <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">                      
                       <%= company.subject_matter_comparison %>
                     </div> 
@@ -107,12 +105,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse3" class="app-    accordion">
-                        Length
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse3" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Length
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse3" class="panel-collapse collapse  <%= company.name %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse3" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.length %>
                     </div> 
@@ -122,12 +120,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse4" class="app-    accordion">
-                        Configuration
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse4" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Configuration
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse4" class="panel-collapse collapse  <%= company.name %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse4" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.configuration %>
                     </div> 
@@ -137,12 +135,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse5" class="app-        accordion">
-                        Certification
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse5" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Certification
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse5" class="panel-collapse collapse  <%= company.name %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse5" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.certification %>
                     </div> 
@@ -152,12 +150,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= company.name %>-collapse6" class="app-        accordion">
-                        Noted Customers
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse6" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus"></span> Noted Customers
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= company.name %>-collapse6" class="panel-collapse collapse  <%= company.name %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse6" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.noted_customers %>
                     </div> 
@@ -167,7 +165,7 @@
               </div>
             </div> <!-- end panel-body  -->
           </div> <!-- end panel-default  --> 
-        </div> <!-- end panel-<%= company.name %>  -->
+        </div> <!-- end panel-<%= (company.name).gsub(' ', '-') %>  -->
 
         <% end %>
 
@@ -197,7 +195,7 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.name %></td>
+        <td><%= (company.name).gsub(' ', '-') %></td>
         <td><%= company.pricing_information %></td>
         <td><%= company.subject_matter_comparison %></td>
         <td><%= company.length %></td>
@@ -221,19 +219,37 @@
 <script>
   $(function(){
   
+
+    /* Set up page */
     <% @companies.each do |company| %>
-      $('#panel-<%= company.name %>').hide();
+      $('#panel-<%= (company.name).gsub(' ', '-') %>').hide();
     <% end %>
 
     $('.collapse').collapse({
       parent: true
     });  
 
+
+
+
+    /* Page functions */
     <% @companies.each do |company| %>
-        $('#inlineCheckbox-<%= company.name %>').click(function () {
-          $('#panel-<%= company.name %>').toggle();
+        $('#inlineCheckbox-<%= (company.name).gsub(' ', '-') %>').click(function () {
+          $('#panel-<%= (company.name).gsub(' ', '-') %>').toggle();
           columnCheck(); 
         });
+    <% end %>
+
+    <% @companies.each do |company| %>
+      $('#<%= (company.name).gsub(' ', '-') %>-show').click(function () {
+        $(".<%= (company.name).gsub(' ', '-') %>-collapse").collapse('show');
+      });      
+    <% end %>
+
+    <% @companies.each do |company| %>
+      $('#<%= (company.name).gsub(' ', '-') %>-hide').click(function () {
+        $(".<%= (company.name).gsub(' ', '-') %>-collapse").collapse('hide');
+      });      
     <% end %>
 
       function columnCheck() {
@@ -249,30 +265,21 @@
       columnCheck();
 
     <% @companies.each do |company| %>
-      $('#panel-<%= company.name %> span.glyphicon-remove-circle').click(function () {
-        $('#inlineCheckbox-<%= company.name %>').trigger('click');
+      $('#panel-<%= (company.name).gsub(' ', '-') %> span.glyphicon-remove-circle').click(function () {
+        $('#inlineCheckbox-<%= (company.name).gsub(' ', '-') %>').trigger('click');
       });      
     <% end %>
 
 
-    <% @companies.each do |company| %>
-      $('#<%= company.name %>-show').click(function () {
-        $(".<%= company.name %>-collapse").collapse('show');
-      });      
-    <% end %>
 
 
-    <% @companies.each do |company| %>
-      $('#<%= company.name %>-hide').click(function () {
-        $(".<%= company.name %>-collapse").collapse('hide');
-      });      
-    <% end %>
 
-/*
     $('.app-accordion').click(function (){
-      $(this + ' .glyphicon').hide(2000);      
+      $(this).addClass('my-active'); 
+      $('.my-active .glyphicon').toggleClass('glyphicon-plus glyphicon-minus')
+      $(this).removeClass('my-active');  
     });
-*/
+
 
   // alert('loaded');
 

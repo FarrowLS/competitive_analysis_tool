@@ -8,23 +8,9 @@ body {
 }
 
 
-/* Company panel controls  */
-
-div.glyphicon, .show-hide-control {
-  cursor: pointer;	
-}
-
-div.print-close {
-  text-align: right;
-}
-
 /* Framework color fixes  */
 
 a, a:hover, a:active {
-  color:#666666;
-}
-
-.glyphicon {
   color:#666666;
 }
 
@@ -32,7 +18,24 @@ a, a:hover, a:active {
   text-decoration:underline;
 }
 
-/* Colors  */
+.glyphicon {
+  color:#666666;
+}
+
+
+/* Competitive Analysis Tool Safelight styles  */
+
+div.glyphicon, .show-hide-control {
+  cursor: pointer;  
+}
+
+div.print-close {
+  text-align: right;
+}
+
+.show-hide-control-group {
+  margin: 5px;
+}
 
 .navbar-inverse {
   background-color: #004F5A;
@@ -74,7 +77,9 @@ h4, h4 a, h4 a:active, h4 a:hover, a.company-selection, a.company-selection:acti
   color: #FF6649;
 }
 
-
+.show-hide-control .glyphicon {
+  color: #666666;
+}
 
 
 

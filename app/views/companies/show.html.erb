@@ -1,41 +1,36 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
+<h4 class="company-title"><%= @company.name %></h4>
+
 <p>
-  <strong>Name:</strong>
-  <%= @company.name %>
+  <div><strong>Pricing information</strong></div>
+  <div><%= @company.pricing_information %></div>
 </p>
 
 <p>
-  <strong>Pricing information:</strong>
-  <%= @company.pricing_information %>
+  <div><strong>Subject matter comparison</strong></div>
+  <div><%= @company.subject_matter_comparison %></div>
 </p>
 
 <p>
-  <strong>Subject matter comparison:</strong>
-  <%= @company.subject_matter_comparison %>
+  <div><strong>Length</strong></div>
+  <div><%= @company.length %></div>
 </p>
 
 <p>
-  <strong>Length:</strong>
-  <%= @company.length %>
+  <div><strong>Configuration</strong></div>
+  <div><%= @company.configuration %></div>
 </p>
 
 <p>
-  <strong>Configuration:</strong>
-  <%= @company.configuration %>
+  <div><strong>Certification</strong></div>
+  <div><%= @company.certification %></div>
 </p>
 
 <p>
-  <strong>Certification:</strong>
-  <%= @company.certification %>
+  <div><strong>Noted customers</strong></div>
+  <div><%= @company.noted_customers %></div>
 </p>
 
-<p>
-  <strong>Noted customers:</strong>
-  <%= @company.noted_customers %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
 </div>

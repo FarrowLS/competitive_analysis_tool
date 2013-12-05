@@ -13,31 +13,31 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field(:name, size: '40') %>
   </div>
   <div class="field">
     <%= f.label :pricing_information %><br>
-    <%= f.text_area :pricing_information %>
+    <%= f.text_area(:pricing_information, size: '40x10') %>
   </div>
   <div class="field">
     <%= f.label :subject_matter_comparison %><br>
-    <%= f.text_area :subject_matter_comparison %>
+    <%= f.text_area(:subject_matter_comparison, size: '40x10') %>
   </div>
   <div class="field">
     <%= f.label :length %><br>
-    <%= f.text_area :length %>
+    <%= f.text_area(:length, size: '40x10') %>
   </div>
   <div class="field">
     <%= f.label :configuration %><br>
-    <%= f.text_area :configuration %>
+    <%= f.text_area(:configuration, size: '40x10') %>
   </div>
   <div class="field">
     <%= f.label :certification %><br>
-    <%= f.text_area :certification %>
+    <%= f.text_area(:certification, size: '40x10') %>
   </div>
   <div class="field">
     <%= f.label :noted_customers %><br>
-    <%= f.text_area :noted_customers %>
+    <%= f.text_area(:noted_customers, size: '40x10') %>
   </div>
   <div class="actions">
     <%= f.submit %>
