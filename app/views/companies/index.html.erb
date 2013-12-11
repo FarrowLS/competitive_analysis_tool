@@ -76,7 +76,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse1" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Pricing information
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Pricing information
                       </a>
                     </h4>
                   </div>
@@ -91,7 +91,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse2" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Subject Matter Comparison
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Subject Matter Comparison
                       </a>
                     </h4>
                   </div>
@@ -106,7 +106,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse3" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Length
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Length
                       </a>
                     </h4>
                   </div>
@@ -121,7 +121,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse4" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Configuration
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Configuration
                       </a>
                     </h4>
                   </div>
@@ -136,7 +136,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse5" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Certification
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Certification
                       </a>
                     </h4>
                   </div>
@@ -151,7 +151,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse6" class="app-accordion">
-                        <span class="glyphicon glyphicon-minus"></span> Noted Customers
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Noted Customers
                       </a>
                     </h4>
                   </div>
@@ -243,12 +243,20 @@
     <% @companies.each do |company| %>
       $('#<%= (company.name).gsub(' ', '-') %>-show').click(function () {
         $(".<%= (company.name).gsub(' ', '-') %>-collapse").collapse('show');
+        // I am here
+        $('#panel-<%= (company.name).gsub(' ', '-') %> .<%= (company.name).gsub(' ', '-') %>-glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        // I am here 
       });      
     <% end %>
 
     <% @companies.each do |company| %>
       $('#<%= (company.name).gsub(' ', '-') %>-hide').click(function () {
         $(".<%= (company.name).gsub(' ', '-') %>-collapse").collapse('hide');
+
+        // I am here starts here
+        $('#panel-<%= (company.name).gsub(' ', '-') %> .<%= (company.name).gsub(' ', '-') %>-glyphicon').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+        // I am here ends here
+
       });      
     <% end %>
 
