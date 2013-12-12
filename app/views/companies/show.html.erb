@@ -53,4 +53,9 @@
   <div><%= @company.links.html_safe %></div>
 </p>
 
+<p>
+  <div><strong>Related File</strong></div>
+  <div><a href="<%= @company.cat_file %>"><%= File.basename(@company.cat_file.to_s) %></a></div>
+</p>
+
 </div>

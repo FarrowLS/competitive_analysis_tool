@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212045741) do
+ActiveRecord::Schema.define(version: 20131212062632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131212045741) do
     t.text     "strengths"
     t.text     "weaknesses"
     t.text     "links"
+    t.string   "cat_file"
   end
 
 end
