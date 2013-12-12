@@ -51,3 +51,6 @@ end
 
 # Using Bootstrap via sass gem
 gem 'bootstrap-sass', '~> 3.0.2.0'
+
+# Using CarrierWave for file uploads
+gem "carrierwave"

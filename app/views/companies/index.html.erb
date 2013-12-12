@@ -90,12 +90,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse1" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Strengths
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse1" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
                     <div class="panel-body">                  
                       <%= company.strengths.to_s.html_safe %>
                     </div> 
@@ -105,12 +105,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse2" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Weaknesses
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse2" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
                     <div class="panel-body">                  
                       <%= company.weaknesses.to_s.html_safe %>
                     </div> 
@@ -120,12 +120,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse1" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse3" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Pricing information
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse1" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse3" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
                     <div class="panel-body">                  
                       <%= company.pricing_information.html_safe %>
                     </div> 
@@ -135,12 +135,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse2" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse4" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Subject Matter Comparison
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse2" class="panel-collapse collapse <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse4" class="panel-collapse collapse <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">                      
                       <%= company.subject_matter_comparison.html_safe %>
                     </div> 
@@ -150,12 +150,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse3" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse5" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Length
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse3" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse5" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.length.html_safe %>
                     </div> 
@@ -165,12 +165,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse4" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse6" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Configuration
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse4" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse6" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.configuration.html_safe %>
                     </div> 
@@ -180,12 +180,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse5" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse7" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Certification
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse5" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse7" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.certification.html_safe %>
                     </div> 
@@ -195,12 +195,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse6" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse8" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Noted Customers
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse6" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse8" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.noted_customers.html_safe %>
                     </div> 
@@ -210,12 +210,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse66" class="app-accordion">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse9" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Links
                       </a>
                     </h4>
                   </div>
-                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse66" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse9" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
                       <%= company.links.to_s.html_safe %>
                     </div> 
