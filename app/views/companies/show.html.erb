@@ -4,6 +4,21 @@
 <h4 class="company-title"><%= @company.name %></h4>
 
 <p>
+  <div><strong>Quick Pitch</strong></div>
+  <div><%= @company.quick_pitch.html_safe %></div>
+</p>
+
+<p>
+  <div><strong>Strengths</strong></div>
+  <div><%= @company.strengths.html_safe %></div>
+</p>
+
+<p>
+  <div><strong>Weaknesses</strong></div>
+  <div><%= @company.weaknesses.html_safe %></div>
+</p>
+
+<p>
   <div><strong>Pricing information</strong></div>
   <div><%= @company.pricing_information.html_safe %></div>
 </p>
@@ -31,6 +46,11 @@
 <p>
   <div><strong>Noted customers</strong></div>
   <div><%= @company.noted_customers.html_safe %></div>
+</p>
+
+<p>
+  <div><strong>Links</strong></div>
+  <div><%= @company.links.html_safe %></div>
 </p>
 
 </div>

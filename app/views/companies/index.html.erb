@@ -75,6 +75,51 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse0" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Quick Pitch
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse0" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                    <div class="panel-body">                  
+                      <%= company.quick_pitch.to_s.html_safe %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Strengths
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                    <div class="panel-body">                  
+                      <%= company.strengths.to_s.html_safe %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Weaknesses
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
+                    <div class="panel-body">                  
+                      <%= company.weaknesses.to_s.html_safe %>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse1" class="app-accordion">
                         <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Pricing information
                       </a>
@@ -161,6 +206,21 @@
                     </div> 
                   </div>
                 </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#<%= (company.name).gsub(' ', '-') %>-collapse66" class="app-accordion">
+                        <span class="glyphicon glyphicon-minus <%= (company.name).gsub(' ', '-') %>-glyphicon"></span> Noted Customers
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="<%= (company.name).gsub(' ', '-') %>-collapse66" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
+                    <div class="panel-body">    
+                      <%= company.links.to_s.html_safe %>
+                    </div> 
+                  </div>
+                </div>                
 
               </div>
             </div> <!-- end panel-body  -->
