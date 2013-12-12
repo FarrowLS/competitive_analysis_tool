@@ -60,9 +60,9 @@
                 </div>
                 <div class="col-md-3 print-close" >
 
-                  <%= link_to edit_company_path(company) do %><span class="glyphicon glyphicon-pencil" title="edit"></span><% end %>
+                  <%= link_to edit_company_path(company) do %><span class="glyphicon glyphicon-pencil" title="edit company information"></span><% end %>
 
-		              <%= link_to company_path(company) do %><span class="glyphicon glyphicon-print" title="print"></span><% end %> 
+		              <%= link_to company_path(company) do %><span class="glyphicon glyphicon-print" title="company print view"></span><% end %> 
 
                   <%= link_to company_path(company), method: :delete, data: {confirm: 'Are you sure?'} do %><span class="glyphicon glyphicon-trash" title="delete company"></span><% end %>
 
@@ -82,7 +82,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse1" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse  ">
                     <div class="panel-body">                  
-                      <%= company.pricing_information %>
+                      <%= company.pricing_information.html_safe %>
                     </div> 
                   </div>
                 </div>
@@ -97,7 +97,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse2" class="panel-collapse collapse <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">                      
-                      <%= company.subject_matter_comparison %>
+                      <%= company.subject_matter_comparison.html_safe %>
                     </div> 
                   </div>
                 </div>
@@ -112,7 +112,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse3" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
-                      <%= company.length %>
+                      <%= company.length.html_safe %>
                     </div> 
                   </div>
                 </div>
@@ -127,7 +127,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse4" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
-                      <%= company.configuration %>
+                      <%= company.configuration.html_safe %>
                     </div> 
                   </div>
                 </div>
@@ -142,7 +142,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse5" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
-                      <%= company.certification %>
+                      <%= company.certification.html_safe %>
                     </div> 
                   </div>
                 </div>	
@@ -157,7 +157,7 @@
                   </div>
                   <div id="<%= (company.name).gsub(' ', '-') %>-collapse6" class="panel-collapse collapse  <%= (company.name).gsub(' ', '-') %>-collapse ">
                     <div class="panel-body">    
-                      <%= company.noted_customers %>
+                      <%= company.noted_customers.html_safe %>
                     </div> 
                   </div>
                 </div>
